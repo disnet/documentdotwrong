@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script>
+    addEventListener('load', function () {
+      var xhr = new XMLHttpRequest();
+      xhr.addEventListener('load', function() {
+        var text = xhr.responseText;
+        window.document.open();
+        window.document.write(text);
+        window.document.close();
+      });
+      xhr.open("get", '/success.html');
+      xhr.send();
+    });
+  </script>
+<h1>loading...</h1>
+</body>
+</html>
